@@ -1,0 +1,36 @@
+{
+	"AWSEBDockerVersion" : 2,
+	"containerDefinitions" : [
+		{
+			"name" : "frontend",
+			"image" : "arunjose/multi-docker-frontend",
+			"hostname" : "frontend",
+			"essential" : false
+		},
+		{
+			"name" : "backend",
+			"image" : "arunjose/multi-docker-backend",
+			"hostname" : "backend",
+			"essential" : false
+		},
+		{
+			"name" : "worker",
+			"image" : "arunjose/multi-docker-worker",
+			"hostname" : "worker",
+			"essential" : false
+		},
+		{
+			"name" : "gateway",
+			"image" : "arunjose/multi-docker-gateway",
+			"hostname" : "gateway",
+			"essential" : true,
+			"portMappings" :[
+				{
+					"hostPort" : 80,
+					"targetPort" : 80
+				}
+			],
+			"links" : ["frontend", "backend"]
+		}
+	]
+}
