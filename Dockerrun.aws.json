@@ -5,19 +5,22 @@
 			"name" : "frontend",
 			"image" : "arunjose/multi-docker-frontend",
 			"hostname" : "frontend",
-			"essential" : false
+			"essential" : false,
+			"memory" : 128
 		},
 		{
 			"name" : "backend",
 			"image" : "arunjose/multi-docker-backend",
 			"hostname" : "backend",
-			"essential" : false
+			"essential" : false,
+			"memory" : 128
 		},
 		{
 			"name" : "worker",
 			"image" : "arunjose/multi-docker-worker",
 			"hostname" : "worker",
-			"essential" : false
+			"essential" : false,
+			"memory" : 128
 		},
 		{
 			"name" : "gateway",
@@ -30,7 +33,8 @@
 					"containerPort" : 80
 				}
 			],
-			"links" : ["frontend", "backend"]
+			"links" : ["frontend", "backend"],
+			"memory" : 128
 		}
 	]
 }
