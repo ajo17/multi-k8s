@@ -27,7 +27,7 @@
 			"portMappings" :[
 				{
 					"hostPort" : 80,
-					"targetPort" : 80
+					"containerPort" : 80
 				}
 			],
 			"links" : ["frontend", "backend"]
