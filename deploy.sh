@@ -1,6 +1,6 @@
-docker build -t arunjose/multi-docker-frontend:latest -t arunjose/multi-docker-frontend:$SHA ./client/Dockerfile ./client
-docker build -t arunjose/multi-docker-backend:latest -t arunjose/multi-docker-backend:$SHA ./server/Dockerfile ./server
-docker build -t arunjose/multi-docker-worker:latest -t arunjose/multi-docker-worker:$SHA ./worker/Dockerfile ./worker
+docker build -t arunjose/multi-docker-frontend:latest -t arunjose/multi-docker-frontend:$SHA -f ./client/Dockerfile ./client
+docker build -t arunjose/multi-docker-backend:latest -t arunjose/multi-docker-backend:$SHA  -f ./server/Dockerfile ./server
+docker build -t arunjose/multi-docker-worker:latest -t arunjose/multi-docker-worker:$SHA -f ./worker/Dockerfile ./worker
 docker push arunjose/multi-docker-frontend:latest
 docker push arunjose/multi-docker-backend:latest
 docker push arunjose/multi-docker-worker:latest
