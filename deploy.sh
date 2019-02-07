@@ -8,6 +8,6 @@ docker push arunjose/multi-docker-frontend:$SHA
 docker push arunjose/multi-docker-backend:$SHA
 docker push arunjose/multi-docker-worker:$SHA
 kubectl apply -f k8s
-kubectl set image deployments/backend-deployment backend=backend-arunjose/multi-docker-backend:$SHA
-kubectl set image deployments/frontend-deployment frontend=frontend-arunjose/multi-docker-frontend:$SHA
+kubectl set image deployments/backend-deployment backend=arunjose/multi-docker-backend:$SHA
+kubectl set image deployments/frontend-deployment frontend=arunjose/multi-docker-frontend:$SHA
 kubectl set image deployments/worker-deployment worker=arunjose/multi-docker-worker:$SHA
